@@ -73,10 +73,10 @@ async def scribe(ctx):
         # run interface in thread pool so bot stays active
 
         # test the time taken (to 3dp) to perform action
-        start = perf_counter()
+        
         await ctx.send (await asyncio.to_thread(transcribe, audio_dict))
-        end = perf_counter()
-        await ctx.send(f"took {round((end-start),3)} seconds to transcribe")
+        
+        
         if os.path.exists("voicenote.ogg"):
             os.remove("voicenote.ogg")
     else: 
