@@ -1,57 +1,21 @@
-<<<<<<< HEAD
-# YapHelper 
+# Discord Voice Note Transcriber & Summarizer
 
-A Discord bot that transcribes native Discord voice messages into text using Groq's fast Whisper API.
-
----
+A fast, lightweight Discord bot that transcribes and summarizes voice notes on demand. Instead of relying on expensive local hardware and heavy machine learning models, this bot offloads inference to the **Groq Cloud API**, providing near-instant responses using Language Processing Units (LPUs).
 
 ## Features
+* **Instant Transcriptions:** Reply to any voice note with `!scribe` to get a highly accurate text transcription powered by Whisper Large V3.
+* **Smart Summaries:** Reply with `!sum` to get a concise, conversational summary of the voice note powered by open-source LLMs (GPT-OSS-20B) via Groq.
+* **Lightweight & Cloud-Ready:** No local GPUs, CUDA drivers, or massive VRAM requirements needed. Can be hosted easily on a cheap CPU VPS or Raspberry Pi.
 
-- **Voice Message Support:** Listens to native Discord voice notes (`message.flags == 8192`).
-- **Groq API Cloud Inference:** Transcribes audio using `whisper-large-v3` without requiring local GPU/RAM.
-- **24/7 Hosting:** Built to deploy lightweight on free cloud platforms like Render.
+## Prerequisites
+Before running the bot, you will need:
+* **Python 3.8+** installed.
+* A **Discord Bot Token** from the [Discord Developer Portal](https://discord.com/developers/applications). Ensure the **Message Content Intent** is enabled.
+* A **Groq API Key** from the [Groq Cloud Console](https://console.groq.com/).
 
----
+##  Installation & Setup
 
-## Setup & Running
-
-1. **Clone the repo:**
+1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/Rizlem/yaphelper.git](https://github.com/Rizlem/yaphelper.git)
-   cd yaphelper
-=======
-# YapHelper
-
-A Discord bot that transcribes native Discord voice messages into text using Hugging Face's OpenAI Whisper pipeline and GPU acceleration (CUDA).
-
----
-
-## Features
-
-- **Voice Message Support:** Listens to native Discord voice notes (`message.flags == 8192`).
-- **GPU Acceleration:** Built with PyTorch CUDA support (`cuda:0`) and half-precision (`fp16`) for fast audio transcription.
-- **Async Execution:** Runs ML inference in background threads (`asyncio.to_thread`) to ensure the bot stays responsive.
-
----
-
-## Quick Setup
-
-### 1. Requirements
-
-- Windows 10/11 with an NVIDIA GPU
-- Anaconda / Miniconda
-- Python 3.11
-
-### 2. Environment Setup
-
-```powershell
-# Create & activate a Python 3.11 environment
-conda create -n sttbot python=3.11 -y
-conda activate sttbot
-
-# Install PyTorch with CUDA 12.1 support
-pip install torch torchvision torchaudio --index-url [https://download.pytorch.org/whl/cu121](https://download.pytorch.org/whl/cu121)
-
-# Install required dependencies
-pip install discord.py soundfile transformers python-dotenv
->>>>>>> 693dbe9 (Update README documentation)
+   git clone [https://github.com/your-username/discordstt.git](https://github.com/your-username/discordstt.git)
+   cd discordstt
